@@ -11,9 +11,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 
 import static com.thoughtbot.expandablerecyclerview.models.ExpandableListPosition.CHILD;
 import static com.thoughtbot.expandablerecyclerview.models.ExpandableListPosition.GROUP;
@@ -21,8 +18,7 @@ import static com.thoughtbot.expandablerecyclerview.models.ExpandableListPositio
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 21)
+
 public class ExpandableListTest {
 
   private Context context;
@@ -30,12 +26,7 @@ public class ExpandableListTest {
 
   @Before
   public void setUp() throws Exception {
-    MockitoAnnotations.initMocks(this);
-    Application application = RuntimeEnvironment.application;
-    assertNotNull(application);
 
-    context = application;
-    groups = TestDataFactory.makeGroups();
   }
 
   @Test
